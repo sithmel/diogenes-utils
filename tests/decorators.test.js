@@ -1,5 +1,5 @@
 /* eslint-env node, mocha */
-const cacheServicePromise = require('..').cacheServicePromise
+const cacheService = require('..').cacheService
 const assert = require('chai').assert
 
 function delay (ms) {
@@ -10,15 +10,15 @@ function delay (ms) {
   })
 }
 
-describe('cache (promise)', () => {
+describe('cacheService', () => {
   let cacheOnce
   let cacheTwice
   let cacheTTL
 
   beforeEach(() => {
-    cacheOnce = cacheServicePromise({ len: 1 })
-    cacheTwice = cacheServicePromise({ len: 2 })
-    cacheTTL = cacheServicePromise({ len: 1, ttl: 1 })
+    cacheOnce = cacheService({ len: 1 })
+    cacheTwice = cacheService({ len: 2 })
+    cacheTTL = cacheService({ len: 1, ttl: 1 })
   })
 
   it('it caches once', async () => {
