@@ -14,8 +14,16 @@ function cacheService ({ len, ttl }) {
         return cache.get(key)
       }
       const result = func.call(this, deps)
-      cache.set(key, result)
-      return result
+      if (typeof result === 'object' && 'then' in result) {
+        return result
+          .then((res) => {
+            cache.set(key, result)
+            return Promise.resolve(res)
+          })
+      } else {
+        cache.set(key, result)
+        return result
+      }
     }
   }
 }
