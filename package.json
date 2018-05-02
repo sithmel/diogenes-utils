@@ -1,7 +1,7 @@
 {
-  "name": "diogenes-utils",
-  "version": "0.0.2",
-  "description": "Utilities for diogenes",
+  "name": "require-many",
+  "version": "0.0.0",
+  "description": "Import an array of node modules, using globbing and require.resolve.",
   "main": "src/index.js",
   "scripts": {
     "test": "mocha tests/*.js",
@@ -14,11 +14,10 @@
     "prepush": "npm run test"
   },
   "keywords": [
-    "plugins",
-    "dependency injection",
-    "services"
+    "require",
+    "node"
   ],
-  "repository": "git@github.com:sithmel/diogenes-utils.git",
+  "repository": "git@github.com:sithmel/require-many.git",
   "author": "Maurizio Lupo <maurizio.lupo@gmail.com>",
   "license": "MIT",
   "devDependencies": {
@@ -34,7 +33,6 @@
     "npm-release": "^1.0.0"
   },
   "dependencies": {
-    "little-ds-toolkit": "^1.0.0",
-    "obj-uuid": "0.0.1"
+    "glob": "^7.1.2"
   }
 }
